@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *inputText;
+- (IBAction)boomButtonPressed:(UIButton *)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *rhymeBox;
 
 
 @end
