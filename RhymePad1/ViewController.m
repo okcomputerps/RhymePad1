@@ -17,6 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    NSString * word1 = @"jabroni";
+    NSString * word2 = @"hillary";
+    NSString * sentence = @"hard to see, the dark side is.";
+    
+    NSArray *wordInSentence = [sentence componentsSeparatedByString:@" "];
+    
+    NSArray *myArray = [[NSArray alloc] initWithObjects:word1, word2, nil];
+    NSLog(@"%@", wordInSentence);
+    for (int word=0; word <[wordInSentence count]; word++) {
+        NSLog(@"%@", [wordInSentence objectAtIndex:word]);
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,6 +48,8 @@
     NSLog (@"%@", pigLatin);
      self.rhymeBox.text = pigLatin;
     
+    
 }
+
 
 @end
