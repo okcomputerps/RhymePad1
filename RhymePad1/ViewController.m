@@ -37,27 +37,35 @@
 
 - (IBAction)boomButtonPressed:(UIButton *)sender {
     
-    
+    //user input
     NSString * myInputText = self.inputText.text;
-    
+    NSString * pigLatin;
+    //identifies words in a sentance based off seperation by spaces
     NSArray *wordsInSentence = [myInputText componentsSeparatedByString:@" "];
+    //logs the array above
     NSLog(@"%@", wordsInSentence);
+    //starts at the first word and counts how many words are in sentence. Loops through those words
     for (int word=0; word <[wordsInSentence count]; word++) {
-        NSString * firstLetter = [NSString stringWithFormat:@"%c",[myInputText characterAtIndex:0]];
-        NSRange range = NSMakeRange(1, myInputText.length-1);
-        NSString * restOfLetters = [myInputText substringWithRange:range];
-        NSString * pigLatin = [NSString stringWithFormat:@"%@%@%@",restOfLetters,firstLetter, @"ay"];
-
+        //sets myWord equal to the object from the array wordInSentence at the index # word
+        NSString * myWord =[wordsInSentence objectAtIndex:word];
+        //go to the first letter in myWord and store it in the variable firstLetter
+        NSString * firstLetter = [NSString stringWithFormat:@"%c",[myWord characterAtIndex:0]];
+        //creating a new word by counting the characters and subtracting the first letter, then storing the first letter
+        NSRange range = NSMakeRange(1, myWord.length-1);
+        //grabs the rest of the letters and stores them in a variable called rest of letter
+        NSString * restOfLetters = [myWord substringWithRange:range];
+        //creating a format from the values of restofletter, firstLetter and "ay"
+        pigLatin = [NSString stringWithFormat:@"%@%@%@",restOfLetters,firstLetter, @"ay"];
         NSLog(@"%@", [wordsInSentence objectAtIndex:word]);
-    }
+        NSLog(@"%@", pigLatin);
+   NSArray *pigLatinWordsInSentence = [pigLat]
     
+   // NSLog (@"%@", firstLetter);
+   // NSLog (@"%@", pigLatin);
+   
     
-    //NSLog (@"%@", firstLetter);
-    //NSLog (@"%@", pigLatin);
+      }
      self.rhymeBox.text = pigLatin;
-    
-    
-    
 }
 
 
